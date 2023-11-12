@@ -1,0 +1,74 @@
+.main{
+    min-height:70vh;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    align-items:center;
+    justify-content:center;
+    //border:1px solid red;
+    padding-bottom: 2rem;
+    padding-top: 7rem;
+}
+.main button{
+border:1px solid black;
+padding:10px 25px;
+background-color: white;
+border-radius: 20px;
+}
+.main button:hover{
+    background-color: rgba(205, 197, 197, 0.749);
+    border:1px solid  rgba(205, 197, 197, 0.749);
+    color:white;
+}
+.heading{
+//border:1px solid purple;
+font-size:5rem;
+margin:2rem;
+}
+.description{
+//border:1px solid orangered;
+margin:3rem;
+width:50%;
+}
+.product{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border:1px solid gray;
+    border-radius: 10px;
+    //width:22%;
+    padding-top:1rem;
+    padding-bottom:2rem;
+}
+.name{
+    font-weight: 500;
+    font-size: 20px;
+}
+.product button{
+    padding:10px 25px;
+    background-color: black;
+    color:white;
+    border-radius: 20px;
+    
+}
+
+.productImage{
+   // border-radius:1.4rem;
+    //border:1px solid orange;
+    padding:10px 20px;
+}
+
+.products{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+   // border:1px solid purple;
+    gap:2rem;
+    flex-wrap:wrap;
+    justify-content: center;
+  // margin:2rem;
+}
+
+

@@ -1,0 +1,17 @@
+.link {
+    display: flex;
+    padding-bottom: 10px;
+  }
+  
+  .link a {
+    margin-right: 10px; /* Add margin to create a gap between links */
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent; /* Hide the default underline */
+    transition: border-bottom 0.3s ease; /* Add a smooth transition for the underline */
+  }
+  
+  .link a:hover {
+    border-bottom: 1px solid orange; /* Show the underline on hover */
+    color:orange;
+  }

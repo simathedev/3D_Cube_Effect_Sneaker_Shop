@@ -1,0 +1,44 @@
+.main{
+    background-color: rgba(205, 197, 197, 0.749);
+    color:white;
+    display: flex;
+    flex-direction: column;
+    padding:25px ;
+    min-height: 15vh;
+}
+.shopName{
+    margin-right: 4rem;
+    font-size:1.6rem;
+}
+.footerContainer{
+    display: flex;
+    gap:2rem;
+}
+.footerSecContainer{
+    justify-content:space-between ;
+    width:100%;
+    //border:1px solid green;
+}
+.link{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+.link a{
+    text-decoration: none;
+    color:white
+}
+.link a:hover{
+    color:orange;
+}
+.socialMediaLinks{
+    display:flex;
+    gap:0.5rem;
+    padding:10px 0px;
+}
+.socialMediaLinks svg{
+    font-size:1.8rem;
+}
+.socialMediaLinks svg:hover{
+    color:orange;
+}

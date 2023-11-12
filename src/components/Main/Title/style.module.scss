@@ -1,0 +1,14 @@
+.title{
+    font-size: 9rem;
+    padding-bottom: 20px;
+    z-index: 0;
+    position: absolute;
+    //border: 1px solid pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
