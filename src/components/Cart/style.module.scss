@@ -1,0 +1,55 @@
+.main{
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    //min-width: 98%;
+}
+.scrollable {
+    /* Add scroll styles */
+    overflow-y: auto; /* Add vertical scroll bar */
+    max-height: 80vh; /* Set maximum height for the scroll container */
+    /* Adjust the max-height according to your design */
+  }
+.cartItem{
+    display:flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border:1px solid gray;
+    border-radius: 10px;
+    //width:22%;
+    //min-height: 100vh;
+    padding:1rem 0.5rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    color:black;
+}
+.cartDescription{
+    display:flex;
+    flex-direction:column;
+    width:60%;
+    padding:10px 2px;
+}
+.main button{
+    padding:10px 25px;
+    background-color: black;
+    color:white;
+    border-radius: 20px;
+    
+}
+.toastifySuccess
+{
+    z-index:9999999;
+}
+.cartItems{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productImage
+{
+    object-fit: contain;
+}
+.totalHeading{
+    color:black;
+}

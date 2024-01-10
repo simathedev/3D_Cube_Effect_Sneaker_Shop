@@ -1,0 +1,19 @@
+.productContainer{
+    display:flex;
+    flex-direction:column;
+    background-color: white;
+    border-radius: 3%;
+    min-width: 300px;
+    max-width:310px;
+    padding:5px;
+    border:1px solid gray;
+}
+.productImage{
+    padding:20px;
+}
+.toastifySuccess{
+    font-size:1rem;
+}
+.toastifyError{
+    font-size:1rem;
+}
