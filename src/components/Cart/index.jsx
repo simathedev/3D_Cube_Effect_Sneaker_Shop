@@ -67,6 +67,7 @@ function Cart() {
               alt={item.title}
               width={100}
               height={100}
+              priority={true}
               className={styles.productImage}
             />
             <div className={`${styles.cartDescription} xs:w-[80%] md:w-[60%]`}>

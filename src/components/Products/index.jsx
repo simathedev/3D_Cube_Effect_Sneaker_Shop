@@ -53,6 +53,7 @@ function Index() {
                 alt={detail.name}
                 width={300}
                 height={300}
+                priority={true}
                 className={styles.productImage}
                 style={{ borderRadius: '9%' }}
               />

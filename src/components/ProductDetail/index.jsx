@@ -56,6 +56,7 @@ function Index({ product, onClose }) {
         alt={product.name}
         width={350}
         height={350}
+        priority={true}
         className={styles.productImage}
         style={{ borderRadius: '9%' }}
       />

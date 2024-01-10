@@ -95,7 +95,12 @@ const cartReducer = (state, action) => {
     return state;
   }
   case 'LOAD_CART':
-    return action.payload;
+    return {
+      ...state,
+      items: action.payload.items || [],
+      total: action.payload.total || 0,
+      count: action.payload.count || 0,
+    };
     default:
       return state;
   }
