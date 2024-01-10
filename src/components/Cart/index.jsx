@@ -11,17 +11,6 @@ import {  FaCartShopping } from "react-icons/fa6";
 
 function Cart() {
   const { cartState, dispatch } = useCart(); 
-  useEffect(() => {
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-      dispatch({ type: 'LOAD_CART', payload: JSON.parse(storedCart) });
-    }
-  }, [dispatch]);
-
-  // Save cart data to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cartState));
-  }, [cartState]);
   // Get cartState from context
   const handleIncreaseQuantity = (item) => {
     dispatch({ type: 'INCREASE_QUANTITY', payload: item });
