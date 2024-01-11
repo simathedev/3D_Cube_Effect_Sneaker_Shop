@@ -1,6 +1,6 @@
 // Cart.jsx
 
-import React, { useEffect } from 'react';
+import React, { useEffect , useState } from 'react';
 import styles from './style.module.scss';
 import Image from 'next/image';
 import { useCart } from './CartContext'; // Import the useCart hook
@@ -8,9 +8,11 @@ import { FaMinus,FaPlus,FaTimes } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {  FaCartShopping } from "react-icons/fa6";
+import Checkout from '../../app/widgets/checkoutMessage';
 
 function Cart() {
-  const { cartState, dispatch } = useCart(); 
+  const { cartState, dispatch } = useCart();
+  const [checkoutMessageVisible, setCheckoutMessageVisible] = useState(false); 
   // Get cartState from context
   const handleIncreaseQuantity = (item) => {
     dispatch({ type: 'INCREASE_QUANTITY', payload: item });
@@ -28,19 +30,16 @@ function Cart() {
     const noMoreProducts = true; // Replace this with your condition to check for more products
 
     if (noMoreProducts) {
-      toast.success('That All. Checkout Complete', {
-        position: toast.POSITION.BOTTOM_RIGHT, // Set the position to bottom-center
-        className: 'toastifySuccess',
-        //autoClose: 3000, // Close the notification after 3000 milliseconds (3 seconds)
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
+      setCheckoutMessageVisible(true); 
     }
+
+   
   };
+  const handleCloseMessage = () => {
+    // Set checkoutMessageVisible to false when the message should be closed
+    setCheckoutMessageVisible(false);
+  };
+
 
   return (
     <div className={`${styles.main} min-w-full`}>
@@ -57,10 +56,10 @@ function Cart() {
               width={100}
               height={100}
               priority={true}
-              className={styles.productImage}
+              className={`${styles.productImage}`}
             />
             <div className={`${styles.cartDescription} xs:w-[80%] md:w-[60%]`}>
-            <p>{item.title}</p>
+            <p className='font-semibold'>{item.title}</p>
             <p>R {item.price}</p>
             <p>size: {item.size}</p>
             <div className={`flex items-center justify-around`}>
@@ -75,12 +74,13 @@ function Cart() {
         
       </div>
       )}
-      <h1 className={`${styles.totalHeading} text-[8rem] font-bold my-2`}>Total: R {cartState.total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2,  minimumIntegerDigits: 1, }).replace(/,/g, ' ')}</h1>
+      <h1 className={`${styles.totalHeading} text-[8rem] font-bold my-2`}>Total: R {cartState.total.toLocaleString('en-ZA', {minimumFractionDigits: 2, maximumFractionDigits: 2,  minimumIntegerDigits: 1, }).replace(/\./g, '##').replace(/##/g, ',')}</h1>
       {cartState.items.length > 0 && (
         <button className={``} onClick={handleCheckout}>
           Checkout
         </button>
       )}
+      <Checkout checkoutMessageVisible={checkoutMessageVisible}  onCloseMessage={handleCloseMessage}/>
     </div>
   );
 }

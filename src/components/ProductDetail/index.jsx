@@ -60,18 +60,20 @@ function Index({ product, onClose }) {
         className={styles.productImage}
         style={{ borderRadius: '9%' }}
       />
-      <p>{product.name}</p>
+      <p className={'font-semibold'}>{product.name}</p>
       <p>Price: R {product.price}</p>
       <div>
         UK Sizes: <br />
         {product.sizes.map((size) => (
           <button
+          className={styles.sizeButton}
             key={size}
             onClick={() => handleSizeSelection(size)}
             style={{
-              backgroundColor: size === selectedSize ? 'green' : 'white',
+              backgroundColor: size === selectedSize ? '  rgba(205, 197, 197, 0.749)' : 'white',
               margin: '0.2rem',
               flexWrap: 'wrap',
+              color:'black'
             }}
           >
             {size}

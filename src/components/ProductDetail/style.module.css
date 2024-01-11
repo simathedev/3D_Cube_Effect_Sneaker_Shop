@@ -7,6 +7,7 @@
     max-width:310px;
     padding:5px;
     border:1px solid gray;
+    color:black;
 }
 .productImage{
     padding:20px;
@@ -16,4 +17,7 @@
 }
 .toastifyError{
     font-size:1rem;
+}
+.sizeButton:hover{
+    color:white;
 }

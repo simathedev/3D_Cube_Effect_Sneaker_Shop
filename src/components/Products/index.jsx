@@ -13,9 +13,13 @@ function Index() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const addToCart = (item, e) => {
-    const event = e.touches ? e.touches[0] : e;
+    const rect = e.target.getBoundingClientRect(); // Get the clicked element's bounding rectangle
+
     setSelectedProduct(item);
-    setPosition({ x: event.clientX, y: event.clientY });
+    setPosition({
+      x: rect.left, // Position x at the center of the clicked element
+      y: rect.top, // Position y slightly above the clicked element
+    });
   };
 
   const closeDetails = () => {
@@ -61,18 +65,24 @@ function Index() {
               <p>R {detail.price}</p>
               <button
                 className='mt-[1rem] hover:scale-105'
-                onClick={(e) => addToCart(detail, e)}
-                onTouchStart={(e) => addToCart(detail, e)}
+               // onClick={(e) => addToCart(detail, e)}
+                //onTouchStart={(e) => addToCart(detail, e)}
+                onClick={() => setSelectedProduct(detail)}
               >
                 Add to Cart
               </button>
+              {selectedProduct && detail.id === selectedProduct.id && (
+                <div className={styles.productDetailsContainer} style={{ position: 'absolute', top: '0', left: '50',transform: 'translate(-50%, -20%)',zIndex:'99999'}}>
+                  <ProductDetails product={selectedProduct} onClose={closeDetails} />
+                </div>
+              )}
             </div>
           ))}
-          {selectedProduct && (
+          {/*{selectedProduct && (
             <div className={styles.productDetailsContainer} style={{ top: `${position.y}px`, left: `${position.x}px` }}>
               <ProductDetails product={selectedProduct} onClose={closeDetails} />
             </div>
-          )}
+          )}*/}
         </div>
       </div>
       <div className='mt-[4rem] mb-[5rem] hover:scale-105'>
