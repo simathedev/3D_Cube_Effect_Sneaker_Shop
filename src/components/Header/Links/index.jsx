@@ -6,6 +6,8 @@ import { FaTimes } from "react-icons/fa";
 import Cart from '../../Cart';
 import { useCart } from '../../Cart/CartContext'; 
 import CartPopup from '../../../app/widgets/Cartpopup';
+import { Link as ScrollLink } from 'react-scroll';
+
 
 
 export default function Index() {
@@ -13,15 +15,15 @@ export default function Index() {
  const links = [
         {
             title: "Home",
-            href: "/"
+            href: "home"
         },
         {
             title: "Shop",
-            href: "/"
+            href: "shop"
         },
         {
             title: "Contact",
-            href: "/"
+            href: "contact"
         },
     ]
     const [cartVisible, setCartVisible] = useState(false);
@@ -33,9 +35,17 @@ export default function Index() {
     <div className={styles.main}>
   <div className={styles.link}>
         {links.map((link, i) => (
+          <ScrollLink
+          key={i}
+          to={link.href}
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
           <a key={`${i}`} href={link.href}>
             {link.title}
           </a>
+          </ScrollLink>
         ))}
         {cartVisible ? (
           <FaTimes onClick={toggleCart} /> // Show close icon when cart is visible

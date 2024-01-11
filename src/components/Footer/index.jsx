@@ -1,21 +1,22 @@
 import React from 'react';
 import styles from './style.module.scss';
 import { FaSquareFacebook,FaSquareXTwitter,FaSquareInstagram } from "react-icons/fa6";
+import { Link as ScrollLink } from 'react-scroll';
 
 function index() {
 
   const navigationLinks = [
     {
         title: "Home",
-        href: "/"
+        href: "home"
     },
     {
         title: "Products",
-        href: "/"
+        href: "shop"
     },
     {
         title: "Contact",
-        href: "/"
+        href: "contact"
     },
 ]
 const additionalLinks = [
@@ -42,9 +43,18 @@ const additionalLinks = [
 </h1>
 <div className={styles.link}>
         {navigationLinks.map((link, i) => (
-          <a key={`${i}`} href={link.href}>
+           <ScrollLink
+           key={i}
+           to={link.href}
+           spy={true}
+           smooth={true}
+           duration={500}
+         >
+          <a key={`${i}`} href={link.href}
+          >
             {link.title}
           </a>
+          </ScrollLink>
         ))}
     </div>
     <div className={styles.link}>

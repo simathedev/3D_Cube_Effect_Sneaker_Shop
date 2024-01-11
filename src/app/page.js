@@ -21,9 +21,15 @@ export default function Page() {
       {!showSplash && (
         <>
       <Header/>
+      <div id="home">
       <Main/>
+      </div>
+      <div id="shop">
       <Products/>
+      </div>
+      <div id="contact">
       <Contact/>
+      </div>
       <Footer/> 
       </> 
       )}
