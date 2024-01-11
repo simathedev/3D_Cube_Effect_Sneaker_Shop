@@ -58,6 +58,7 @@ function Index() {
                 width={300}
                 height={300}
                 priority={true}
+                loading = 'eager' // {lazy} | {eager}
                 className={styles.productImage}
                 style={{ borderRadius: '9%' }}
               />
